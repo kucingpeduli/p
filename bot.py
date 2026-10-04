@@ -349,12 +349,7 @@ async def slash_kirim_pesan_sekarang(
     # Broadcast ke channel saat ini
     await interaction.followup.send(f"🚀 **Memproses dan mengirimkan Auto-Market Alert ({session_val} - {market_val})...**")
     await send_auto_market_broadcast(interaction.channel, session_type=session_val, market_type=market_val)
-
-
-# =====================================================================
-# SLASH COMMANDS: ANALISIS & SCREENING ON-DEMAND
-# =====================================================================
-
+    
 @bot.tree.command(name="analisis", description="Analisis mendalam Gemini AI: Potensi saham, laporan keuangan, dan katalis berita.")
 @app_commands.describe(ticker="Kode saham, contoh: NVDA, AAPL, BBCA.JK, BBRI.JK, ASII.JK")
 async def slash_analisis(interaction: discord.Interaction, ticker: str):
